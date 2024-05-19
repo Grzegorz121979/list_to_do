@@ -55,3 +55,22 @@ pub fn clear_list(path: &str) -> Result<(), io::Error> {
 
     Ok(())
 }
+
+pub fn sort_list(path: &str) -> Result<(), io::Error> {
+    let mut vec: Vec<String> = Vec::new();
+    let file = File::open(path)?;
+    let reader = BufReader::new(file);
+
+    for line in reader.lines() {
+        let line = line?;
+        vec.push(line);
+    }
+
+    vec.sort();
+
+    for element in vec {
+        println!("{}", element);
+    }
+
+    Ok(())
+}

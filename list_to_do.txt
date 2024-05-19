@@ -1,3 +1,6 @@
-a
-b
-c
+milk
+bread
+bananna
+cherry
+water
+melon

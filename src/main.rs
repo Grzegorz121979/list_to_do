@@ -1,6 +1,6 @@
 mod list;
 
-use list::{print_list, append_item_to_file, remove_item_from_list, clear_list};
+use list::{print_list, append_item_to_file, remove_item_from_list, clear_list, sort_list};
 use std::env;
 
 fn main() {
@@ -30,6 +30,12 @@ fn main() {
             match clear_list(file_path) {
                 Ok(()) => println!("Successfully, list clear"),
                 Err(e) => eprintln!("Error clearin values from list{}", e),
+            }
+        }
+        "sort" => {
+            match sort_list(file_path) {
+                Ok(()) => println!("Successfully, list sorted"),
+                Err(e) => eprintln!("Error {}", e),
             }
         }
         _ => (),
